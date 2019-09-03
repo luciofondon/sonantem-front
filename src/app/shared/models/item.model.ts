@@ -1,4 +1,4 @@
-export class Article {
+export class Item {
     id: number;
     price: number[];
     title: string;

@@ -1,5 +1,5 @@
-import { Article } from './article.model';
+import { Item } from './item.model';
 
 export class ShoppingCart {
-    articleList: Article[];
+    itemList: Item[];
 }

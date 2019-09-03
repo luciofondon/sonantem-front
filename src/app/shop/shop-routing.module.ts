@@ -1,28 +1,34 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './components/home.component';
-import { ListComponent } from './components/list-add.component';
-import { DetailComponent } from './components/detail.component';
-import { ResumeComponent } from './components/resume.component';
+import { HomeComponent } from './templates/components/home.component';
+import { ListComponent } from './templates/components/list.component';
+import { DetailComponent } from './templates/components/detail.component';
+import { ResumeComponent } from './templates/components/resume.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: HotelComponent,
+    component: HomeComponent,
     data: { title: 'List of Hotels' }
   },
   {
-    path: 'add',
-    component: HotelAddComponent,
+    path: '/list',
+    component: ListComponent,
     data: { title: 'List of Hotels' }
   },
   {
-    path: 'edit/:id',
-    component: HotelEditComponent,
+    path: 'detail/:id',
+    component: DetailComponent,
+    data: { title: 'List of Hotels' }
+  },
+  {
+    path: 'resume',
+    component: ResumeComponent,
     data: { title: 'List of Hotels' }
   }
  
 ];
+
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
@@ -31,3 +37,11 @@ const routes: Routes = [
 export class ShopRoutingModule {
 
 }
+
+/*
+{
+  path: 'car',
+  loadChildren: () => import('./4-flow/car/car.module').then(m => m.CarModule)
+}
+]/
+*/
