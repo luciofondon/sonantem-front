@@ -6,7 +6,7 @@ import { FormControl, ReactiveFormsModule, FormGroupDirective, FormBuilder, Form
 @Component({
     selector: 'resume',
     templateUrl: '../resources/resume.component.html',
-    styleUrls: ['../resources/styles/resume.component.less']
+    styleUrls: ['../resources/styles/resume.component.scss']
 })
 export class ResumeComponent implements OnInit {
 

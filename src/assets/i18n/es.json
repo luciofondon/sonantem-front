@@ -1,0 +1,10 @@
+{
+    "header" : {
+        "search" : "[ES]Búsqueda",
+        "about" : "[ES] About us",
+        "contact" : "[ES] Contact us"
+    },
+    "detail":{
+        "description": "[ES] Descripción"
+    }
+}

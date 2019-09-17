@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Observable, of, throwError } from 'rxjs';
 import { catchError, tap, map } from 'rxjs/operators';
-import { Country } from '../models/country.model';
+import { Order } from '../models/order.model';
 import { environment } from '../../../environments/environment';
 
 @Injectable()
@@ -23,11 +23,12 @@ export class PayService {
     };
   }
 
-  getAllCountries(): Observable<Country[]> {
-    return this.http.get<Country[]>(this.API_COUNTRY_URI)
+  getAllCountries(): Observable<Order[]> {
+    return this.http.get<Order[]>(this.API_COUNTRY_URI)
       .pipe(
         tap(heroes => console.log('fetched hotels')),
         catchError(this.handleError('getHotels', []))
       );
   }
   
+}

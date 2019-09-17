@@ -1,0 +1,29 @@
+<div class="header-cart">
+        <div class="btn-group">
+            <button class="btn-link dropdown-toggle icon-cart">
+                <i class="pe-7s-shopbag"></i>
+                <span class="count-style">2</span>
+            </button>
+            <div class="dropdown-menu">
+                <div class="shopping-cart-content">
+                    <ul class="list-unstyled">
+
+                        <item-cart></item-cart>
+                        <item-cart></item-cart>
+                        <item-cart></item-cart>
+
+                    </ul>
+                    <div class="shopping-cart-total">
+                        <h4>Sub-Total : <span>$320.00</span></h4>
+                        <h4>Total : <span>$320.00</span></h4>
+                    </div>
+                    <div class="shopping-cart-btn">
+                        <a class="default-btn" [routerLink]="['checkout']">view cart</a>
+                        <a class="default-btn" [routerLink]="['checkout']">checkout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  

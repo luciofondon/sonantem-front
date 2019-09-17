@@ -6,7 +6,7 @@ import { FormControl, ReactiveFormsModule, FormGroupDirective, FormBuilder, Form
 @Component({
     selector: 'home',
     templateUrl: '../resources/home.component.html',
-    styleUrls: ['../resources/styles/home.component.less']
+    styleUrls: ['../resources/styles/home.component.scss']
 })
 export class HomeComponent implements OnInit {
 
@@ -17,6 +17,10 @@ export class HomeComponent implements OnInit {
   
     ngOnInit() {
     
+    }
+
+    find(){
+        this.router.navigate(['list']);
     }
   
     

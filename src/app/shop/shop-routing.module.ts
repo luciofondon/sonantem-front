@@ -4,6 +4,10 @@ import { HomeComponent } from './templates/components/home.component';
 import { ListComponent } from './templates/components/list.component';
 import { DetailComponent } from './templates/components/detail.component';
 import { ResumeComponent } from './templates/components/resume.component';
+import { LoginComponent } from './templates/components/login.component';
+import { ContactComponent } from './templates/components/contact.component';
+import { AboutComponent } from './templates/components/about.component';
+import { CheckoutComponent } from './templates/components/checkout.component';
 
 const routes: Routes = [
   {
@@ -12,7 +16,12 @@ const routes: Routes = [
     data: { title: 'List of Hotels' }
   },
   {
-    path: '/list',
+    path: 'home',
+    component: HomeComponent,
+    data: { title: 'Home' }
+  },
+  {
+    path: 'list',
     component: ListComponent,
     data: { title: 'List of Hotels' }
   },
@@ -22,9 +31,29 @@ const routes: Routes = [
     data: { title: 'List of Hotels' }
   },
   {
+    path: 'login',
+    component: LoginComponent,
+    data: { title: 'Login Amazon' }
+  },
+  {
     path: 'resume',
     component: ResumeComponent,
-    data: { title: 'List of Hotels' }
+    data: { title: 'Resumen' }
+  },
+  {
+    path: 'contact',
+    component: ContactComponent,
+    data: { title: 'Contact' }
+  },
+  {
+    path: 'about',
+    component: AboutComponent,
+    data: { title: 'About' }
+  },
+  {
+    path: 'checkout',
+    component: CheckoutComponent,
+    data: { title: 'Checkout' }
   }
  
 ];

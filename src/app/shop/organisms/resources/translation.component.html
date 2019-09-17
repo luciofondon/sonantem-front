@@ -1,0 +1,11 @@
+<div class="btn-group">
+    <button class="btn-link dropdown-toggle">English <i class="fa fa-angle-down"></i></button>
+    <div class="dropdown-menu">
+        <ul>
+            <li><a (click)="changeLanguaje('es')" [ngClass]="{'current': activeLang == 'es'}"><img src="assets/images/icons/fr-fr.png" alt="Icons"> Español</a></li>
+            <li><a (click)="changeLanguaje('fr')" [ngClass]="{'current': activeLang == 'fr'}"><img src="assets/images/icons/fr-fr.png" alt="Icons"> Français</a></li>
+            <li><a (click)="changeLanguaje('en')" [ngClass]="{'current': activeLang == 'en'}"><img src="assets/images/icons/en-gb.png" alt="Icons"> English</a></li>
+            <li><a (click)="changeLanguaje('de')" [ngClass]="{'current': activeLang == 'de'}"><img src="assets/images/icons/fr-fr.png" alt="Icons"> Alemán</a></li>
+        </ul>
+    </div>
+</div>

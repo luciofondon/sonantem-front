@@ -1,0 +1,9 @@
+<div class="btn-group">
+    <button class="btn-link dropdown-toggle"> USD $<i class="fa fa-angle-down"></i></button>
+    <div class="dropdown-menu">
+        <ul>
+            <li><a (click)="changeCurrency('euro')" [ngClass]="{'current': activeCurrency == 'es'}">Euro €</a></li>
+            <li><a (click)="changeCurrency('usd')" [ngClass]="{'current': activeCurrency == 'es'}">USD $</a></li>
+        </ul>
+    </div>
+</div>
