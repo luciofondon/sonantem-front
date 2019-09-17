@@ -11,7 +11,7 @@ import { Product } from '../../models/product.model';
 })
 export class ItemGridComponent implements OnInit {
 
-    @Input() product:Product;
+    @Input() product : Product;
 
     constructor(private router: Router, private formBuilder: FormBuilder) { }
   

@@ -1,0 +1,6 @@
+{
+    "/api/prueba": {
+        "target": "http://192.168.80.60:8080",
+        "secure": false
+    }
+}

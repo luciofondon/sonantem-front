@@ -20,14 +20,29 @@ import { ItemListComponent } from './organisms/components/item-list.component';
 import { TranslationComponent } from './organisms/components/translation.component';
 import { CurrencyComponent } from './organisms/components/currency.component';
 import { CartComponent } from './organisms/components/cart.component';
-
+import { FooterCustomComponent } from './organisms/components/footer-custom.component';
+import { HeaderCustomComponent } from './organisms/components/header-custom.component';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { TotalCartPipe } from './pipes/total-cart.pipe';
+import { ItemCheckoutComponent } from './organisms/components/item-checkout.component';
 @NgModule({
     imports: [
         FormsModule,
         ReactiveFormsModule,
         SharedModule,
         ShopRoutingModule,
-        CommonModule
+        CommonModule,
+        TranslateModule.forRoot({
+            loader: {
+              provide: TranslateLoader,
+              useFactory: (http: HttpClient) => {
+                return new TranslateHttpLoader(http);
+              },
+              deps: [ HttpClient ]
+            }
+          })
       
     ],
     declarations: [
@@ -44,7 +59,11 @@ import { CartComponent } from './organisms/components/cart.component';
         ItemCartComponent,
         TranslationComponent,
         CurrencyComponent,
-        CartComponent
+        CartComponent,
+        FooterCustomComponent,
+        HeaderCustomComponent,
+        TotalCartPipe,
+        ItemCheckoutComponent
     ],
     providers: [
         ShopService
@@ -52,7 +71,9 @@ import { CartComponent } from './organisms/components/cart.component';
     exports: [
         TranslationComponent,
         CurrencyComponent,
-        CartComponent
+        CartComponent,
+        FooterCustomComponent,
+        HeaderCustomComponent
     ]
 })
 export class ShopModule {

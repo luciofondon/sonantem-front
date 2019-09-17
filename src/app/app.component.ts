@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent implements OnInit{
+  
   constructor(private router: Router) { }
   
 
@@ -15,9 +16,7 @@ export class AppComponent implements OnInit{
     
   }
 
-  find(){
-    this.router.navigate(['list']);
-  }
+  
 
   
 }

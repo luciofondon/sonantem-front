@@ -1,5 +1,5 @@
 export class Product {
-    image: string[];
+    images: string[];
     priceAmazon: number;
     price: number;
     description: string;

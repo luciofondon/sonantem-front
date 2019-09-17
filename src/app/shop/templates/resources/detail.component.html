@@ -17,60 +17,18 @@
 
                                                     <!-- Slides -->
                                                     <div class="swiper-wrapper">
-                                                        <figure class="swiper-slide">
-                                                            <a href="assets/images/products/single/product-1.jpg" data-size="600x600">
-                                                                <img src="assets/images/products/single/product-1.jpg" alt="Product Image">
+
+
+                                                        <figure *ngFor="let image of product.images" class="swiper-slide">
+                                                            <a href={{image}} data-size="600x600">
+                                                                <img src={{image}} alt={{product.title}}>
                                                                 <div class="image-overlay"><i class="fa fa-search-plus"></i></div>
                                                             </a>
                                                             <figcaption class="visually-hidden">
                                                                 <span>Product Image</span>
                                                             </figcaption>
                                                         </figure>
-                                                        <figure class="swiper-slide">
-                                                            <a href="assets/images/products/single/product-2.jpg" data-size="600x600">
-                                                                <img src="assets/images/products/single/product-2.jpg" alt="Product Image">
-                                                                <div class="image-overlay"><i class="fa fa-search-plus"></i></div>
-                                                            </a>
-                                                            <figcaption class="visually-hidden">
-                                                                <span>Product Image</span>
-                                                            </figcaption>
-                                                        </figure>
-                                                        <figure class="swiper-slide">
-                                                            <a href="assets/images/products/single/product-3.jpg" data-size="600x600">
-                                                                <img src="assets/images/products/single/product-3.jpg" alt="Product Image">
-                                                                <div class="image-overlay"><i class="fa fa-search-plus"></i></div>
-                                                            </a>
-                                                            <figcaption class="visually-hidden">
-                                                                <span>Product Image</span>
-                                                            </figcaption>
-                                                        </figure>
-                                                        <figure class="swiper-slide">
-                                                            <a href="assets/images/products/single/product-4.jpg" data-size="600x600">
-                                                                <img src="assets/images/products/single/product-4.jpg" alt="Product Image">
-                                                                <div class="image-overlay"><i class="fa fa-search-plus"></i></div>
-                                                            </a>
-                                                            <figcaption class="visually-hidden">
-                                                                <span>Product Image</span>
-                                                            </figcaption>
-                                                        </figure>
-                                                        <figure class="swiper-slide">
-                                                            <a href="assets/images/products/single/product-5.jpg" data-size="600x600">
-                                                                <img src="assets/images/products/single/product-5.jpg" alt="Product Image">
-                                                                <div class="image-overlay"><i class="fa fa-search-plus"></i></div>
-                                                            </a>
-                                                            <figcaption class="visually-hidden">
-                                                                <span>Product Image</span>
-                                                            </figcaption>
-                                                        </figure>
-                                                        <figure class="swiper-slide">
-                                                            <a href="assets/images/products/single/product-6.jpg" data-size="600x600">
-                                                                <img src="assets/images/products/single/product-6.jpg" alt="Product Image">
-                                                                <div class="image-overlay"><i class="fa fa-search-plus"></i></div>
-                                                            </a>
-                                                            <figcaption class="visually-hidden">
-                                                                <span>Product Image</span>
-                                                            </figcaption>
-                                                        </figure>
+                                                        
                                                     </div>
                                                 </div> <!-- end of product-full-image -->
                                             </div>
@@ -80,24 +38,11 @@
                                                     <div class="nav-slider">
                                                         <!-- Slides -->
                                                         <div class="swiper-wrapper">
-                                                            <div class="swiper-slide">
-                                                                <img src="assets/images/products/single/product-thumb-1.jpg" alt="Product Thumbnail Image">
+
+                                                            <div *ngFor="let image of product.images"  class="swiper-slide">
+                                                                <img src={{image}} alt={{product.title}}>
                                                             </div>
-                                                            <div class="swiper-slide">
-                                                                <img src="assets/images/products/single/product-thumb-2.jpg" alt="Product Thumbnail Image">
-                                                            </div>
-                                                            <div class="swiper-slide">
-                                                                <img src="assets/images/products/single/product-thumb-3.jpg" alt="Product Thumbnail Image">
-                                                            </div>
-                                                            <div class="swiper-slide">
-                                                                <img src="assets/images/products/single/product-thumb-4.jpg" alt="Product Thumbnail Image">
-                                                            </div>
-                                                            <div class="swiper-slide">
-                                                                <img src="assets/images/products/single/product-thumb-5.jpg" alt="Product Thumbnail Image">
-                                                            </div>
-                                                            <div class="swiper-slide">
-                                                                <img src="assets/images/products/single/product-thumb-6.jpg" alt="Product Thumbnail Image">
-                                                            </div>
+
                                                         </div>
 
                                                         <!-- Navigation -->
@@ -111,7 +56,7 @@
                                 </div>
                                 <div class="col-12 col-sm-12 col-md-6 col-lg-6">
                                     <div class="product-details">
-                                        <h3 class="product-name">Compete Track Tote</h3>
+                                        <h3 class="product-name">{{ product.title }}</h3>
                                         <div class="product-ratings d-flex">
                                             <ul class="rating d-flex mr-4">
                                                 <li><i class="ion ion-md-star-outline"></i></li>
@@ -127,13 +72,13 @@
                                         </div>
                                         <div class="product-price">
                                             <p class="d-flex align-items-center">
-                                                <span class="price-old">$54.65</span>
-                                                <span class="price-new">$43.72</span>
+                                                <span class="price-old">{{ product.priceAmazon | currency:'EUR':true  }}</span>
+                                                <span class="price-new">{{ product.price | currency:'EUR':true  }}</span>
                                                 <span class="price-discount">-20%</span>
                                             </p>
                                         </div>
                                         <div class="product-description">
-                                            <p>Regular fit, round neckline, long sleeves. 100% cotton, brushed inner side for extra comfort.</p>
+                                            <p>{{ product.description }}</p>
                                         </div>
                                         <div class="product-actions">
                                             <h3>Available Options</h3>
@@ -162,18 +107,18 @@
                                                 </div>
                                             </div>
                                             <div class="product-stock">
-                                                <form action="#">
+                                                <form >
                                                     <label>Quantity</label>
                                                     <ul class="d-flex flex-wrap align-items-center">
                                                         <li class="box-quantity">
                                                             <div class="cart-input">
-                                                                <input class="cart-input-box" type="text" value="0">
-                                                                <div class="dec qtybutton"><i class="fa fa-angle-down"></i></div>
-                                                                <div class="inc qtybutton"><i class="fa fa-angle-up"></i></div>
+                                                                <input class="cart-input-box" type="number" >
+                                                                <div (click)="add()" class="dec qtybutton"><i class="fa fa-angle-down"></i></div>
+                                                                <div (click)="subtract()" class="inc qtybutton"><i class="fa fa-angle-up"></i></div>
                                                             </div>
                                                         </li>
                                                         <li>
-                                                            <button type="button" class="default-btn">Add to Cart</button>
+                                                            <button (click)="addToCart()" type="button" class="default-btn">Add to Cart</button>
                                                         </li>
                                                     </ul>
                                                 </form>
@@ -213,7 +158,7 @@
                                         </ul>
                                         <div class="tab-content">
                                             <div class="tab-pane fade show active" id="tab_description" role="tabpanel" aria-labelledby="nav_desctiption">
-                                                <p>Studio Design' PolyFaune collection features classic products with colorful patterns, inspired by the traditional japanese origamis. To wear with a chino or jeans. The sublimation textile printing process provides an exceptional color rendering and a color, guaranteed overtime. Regular fit, round neckline, long sleeves. 100% cotton, brushed inner side for extra comfort.</p>
+                                                <p>{{ product.description }}</p>
                                             </div>
                                             <div class="tab-pane fade" id="tab_product_details" role="tabpanel" aria-labelledby="nav_product_details">
                                                 <div class="product-tab-details d-flex justify-content-center align-content-center">

@@ -1,8 +1,9 @@
   
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormControl, ReactiveFormsModule, FormGroupDirective, FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
+import { FormControl, FormGroupDirective, FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Product } from '../../models/product.model';
+import { ShopService } from '../../services/shop.service';
 
 @Component({
     selector: 'detail',
@@ -11,18 +12,52 @@ import { Product } from '../../models/product.model';
 })
 export class DetailComponent implements OnInit {
 
-    @Input() product:Product;
+    public product : Product;
+    //public quantity: number = 0;
 
-    constructor(private router: Router, private formBuilder: FormBuilder) { }
+    public productForm : FormGroup;
+
+    constructor(private router: Router, private formBuilder: FormBuilder, private shopService: ShopService) { }
   
 
   
     ngOnInit() {
-    
+
+   
+        this.productForm = this.formBuilder.group({
+            'quantity' : [null, Validators.required]
+        });
+        this.product = this.shopService.getProduct();
+
+        
+    }
+
+    addProduct(){
+        this.router.navigate(['login']);
     }
 
     add(){
-        this.router.navigate(['login']);
+      //  this.quantity--;
+    }
+
+    subtract(){
+       // this.quantity++;
+    }
+
+    onSubmit(form : NgForm){
+
+    }
+
+    addToCart(){
+        var product = {
+            images: ["https://images-na.ssl-images-amazon.com/images/I/513e63mGjzL._SL1200_.jpg"],
+            priceAmazon: 12.4,
+            price: 12.2,
+            description: "Descripcion",
+            title: "Titulo1"
+          };
+
+        this.shopService.addToCart(product);
     }
   
     
