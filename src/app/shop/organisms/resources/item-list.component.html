@@ -1,0 +1,46 @@
+<article (click)="detail()">
+    <div class="product-thumb">
+        <div class="product-inner media align-items-center">
+            <div class="product-image mb-4 mb-md-0 mr-md-4 mr-xl-5">
+                <div class="label-product label-sale">-20%</div>
+                <div class="label-product label-new">New</div>
+                <a >
+                    <img style="height: 150px; width: 150px;" src={{product.images[0]}} title={{product.title}} alt={{product.title}}>
+                </a>
+                <div class="action-links">
+                    <a class="action-btn btn-cart"  title="Add to Cart"><i class="pe-7s-shopbag"></i></a>
+                    <a class="action-btn btn-wishlist"  title="Add to Wishlist"><i class="pe-7s-like"></i></a>
+                    <a class="action-btn btn-compare"  title="Add to Compare"><i class="pe-7s-refresh-2"></i></a>
+                    <a class="action-btn btn-quickview" data-toggle="modal" data-target="#product_quick_view"  title="Quick View"><i class="pe-7s-search"></i></a>
+                </div>
+            </div> <!-- end of product-image -->
+
+            <div class="product-caption media-body">
+                <div class="product-manufacturer">
+                    <a >Studio Design</a>
+                </div>
+                <h4 class="product-name">
+                    <a >{{product.title}}</a>
+                </h4>
+                <div class="product-ratings">
+                    <div class="rating-box">
+                        <ul class="rating d-flex">
+                            <li><i class="ion ion-md-star-outline"></i></li>
+                            <li><i class="ion ion-md-star-outline"></i></li>
+                            <li><i class="ion ion-md-star-outline"></i></li>
+                            <li><i class="ion ion-md-star-outline"></i></li>
+                            <li><i class="ion ion-md-star-outline disabled"></i></li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="product-price">
+                    <span class="price-old">{{product.price | currency:'EUR':true }}</span>
+                    <span class="price-new">{{product.price | currency:'EUR':true }}</span>
+                </p>
+                <div class="product-des">
+                    <p>Nunc facilisis sagittis ullamcorper. Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus. Sed et lorem nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean eleifend ..</p>
+                </div>
+            </div><!-- end of product-caption -->
+        </div><!-- end of product-inner -->
+    </div><!-- end of product-thumb -->
+</article> <!-- end of product-layout -->

@@ -3,6 +3,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormControl, ReactiveFormsModule, FormGroupDirective, FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Product } from '../../models/product.model';
+import { ShopService } from '../../services/shop.service';
 
 @Component({
     selector: 'item-cart',
@@ -13,7 +14,7 @@ export class ItemCartComponent implements OnInit {
     @Input() product : Product;
 
    
-    constructor(private router: Router, private formBuilder: FormBuilder) { }
+    constructor(private router: Router, private formBuilder: FormBuilder, private shopService: ShopService) { }
   
 
   
@@ -24,6 +25,12 @@ export class ItemCartComponent implements OnInit {
     add(){
         this.router.navigate(['login']);
     }
+
+
+    deleteProduct(){
+        this.shopService.deleteProduct(this.product);
+    }
+  
   
     
 }

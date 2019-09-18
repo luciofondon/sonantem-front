@@ -50,6 +50,7 @@ export class DetailComponent implements OnInit {
 
     addToCart(){
         var product = {
+            asin: "XXXXX",
             images: ["https://images-na.ssl-images-amazon.com/images/I/513e63mGjzL._SL1200_.jpg"],
             priceAmazon: 12.4,
             price: 12.2,

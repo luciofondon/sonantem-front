@@ -5,21 +5,19 @@ import { FormControl, ReactiveFormsModule, FormGroupDirective, FormBuilder, Form
 import { Product } from '../../models/product.model';
 
 @Component({
-    selector: 'item-list',
-    templateUrl: '../resources/item-list.component.html',
-    styleUrls: ['../resources/styles/item-list.component.scss']
+    selector: 'pagination',
+    templateUrl: '../resources/pagination.component.html',
+    styleUrls: ['../resources/styles/pagination.component.scss']
 })
-export class ItemListComponent implements OnInit {
+export class PaginationComponent implements OnInit {
 
-    @Input() product : Product;
 
     constructor(private router: Router, private formBuilder: FormBuilder) { }
   
 
   
     ngOnInit() {
-    
     }
 
-  
+   
 }

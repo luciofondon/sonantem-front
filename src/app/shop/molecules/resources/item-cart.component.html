@@ -1,6 +1,6 @@
 <li class="single-cart-item media">
     <div class="shopping-cart-img mr-4">
-        <a href="#">
+        <a [routerLink]="['detail']">
             <img class="img-fluid" alt={{product.title}} src={{product.images[0]}}>
             <span class="product-quantity">2x</span>
         </a>
@@ -14,6 +14,6 @@
         </div>
     </div>
     <div class="shopping-cart-delete">
-        <a href="#"><i class="ion ion-md-close"></i></a>
+        <a (click)="deleteProduct()"><i class="ion ion-md-close"></i></a>
     </div>
 </li>

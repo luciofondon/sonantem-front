@@ -14,12 +14,13 @@ export class ShopService {
   
   constructor() { 
     var product = {
+      asin: "XXXXX",
       images: ["https://images-na.ssl-images-amazon.com/images/I/513e63mGjzL._SL1200_.jpg"],
       priceAmazon: 12.4,
       price: 12.2,
       description: "Descripcion",
       title: "Titulo1"
-    };
+  };
 
   this.productListSelected.push(product);
 
@@ -49,6 +50,7 @@ export class ShopService {
   loadProducts(): Product[] {
     var products= [
       {
+        asin: "XXXXX",
         images: ["https://images-na.ssl-images-amazon.com/images/I/513e63mGjzL._SL1200_.jpg"],
         priceAmazon: 12.4,
         price: 12.2,
@@ -56,6 +58,7 @@ export class ShopService {
         title: "Titulo1"
       },
       {
+        asin: "XXXXX",
         images: ["https://images-na.ssl-images-amazon.com/images/I/51p5D8riVkL._SL1000_.jpg"],
         priceAmazon: 12.4,
         price: 12.2,
@@ -63,6 +66,7 @@ export class ShopService {
         title: "Titulo2"
       },
       {
+        asin: "XXXXX",
         images: ["https://images-na.ssl-images-amazon.com/images/I/513e63mGjzL._SL1200_.jpg"],
         priceAmazon: 12.4,
         price: 12.2,
@@ -79,6 +83,7 @@ export class ShopService {
   getProduct(): Product {
     return (
       {
+        asin: "XXXXX",
         images: ["https://images-na.ssl-images-amazon.com/images/I/513e63mGjzL._SL1200_.jpg"],
         priceAmazon: 12.4,
         price: 12.2,
@@ -94,6 +99,10 @@ export class ShopService {
 
   getProductsCart (): Product[] {
     return this.productListSelected;
+  }
+
+  deleteProduct(product: Product){
+
   }
 
 }

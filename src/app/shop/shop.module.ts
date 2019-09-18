@@ -27,6 +27,8 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TotalCartPipe } from './pipes/total-cart.pipe';
 import { ItemCheckoutComponent } from './organisms/components/item-checkout.component';
+import { FilterCheckComponent } from './organisms/components/filter-check.component';
+import { PaginationComponent } from './organisms/components/pagination.component';
 @NgModule({
     imports: [
         FormsModule,
@@ -63,7 +65,9 @@ import { ItemCheckoutComponent } from './organisms/components/item-checkout.comp
         FooterCustomComponent,
         HeaderCustomComponent,
         TotalCartPipe,
-        ItemCheckoutComponent
+        ItemCheckoutComponent,
+        FilterCheckComponent,
+        PaginationComponent
     ],
     providers: [
         ShopService
