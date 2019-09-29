@@ -1,18 +1,20 @@
 import { Injectable } from '@angular/core';
 import { Observable, of, throwError } from 'rxjs';
-import { catchError, tap, map } from 'rxjs/operators';
+import { catchError, timeout, tap, map } from 'rxjs/operators';
 import { environment } from '../../../environments/environment';
 import { Item } from 'src/app/shared/models/item.model';
 import { Product } from '../models/product.model';
+//import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 
 @Injectable()
 export class ShopService {
   public productList: Product[] = [];
   public productListSelected: Product[] = [];
 
-  private readonly API_COUNTRY_URI = environment.apiUrl + '/api/country';
+  private readonly API_DATA_URI = environment.apiUrl + '/api/data';
   
-  constructor() { 
+  constructor(private http: HttpClient) { 
     var product = {
       asin: "XXXXX",
       images: ["https://images-na.ssl-images-amazon.com/images/I/513e63mGjzL._SL1200_.jpg"],
@@ -103,6 +105,17 @@ export class ShopService {
 
   deleteProduct(product: Product){
 
+  }
+
+  getProducts (q: string): Observable<Product[]> {
+    const url = `${this.API_DATA_URI}/${q}`;
+
+    return this.http.get<Product[]>(url)
+      .pipe(
+        
+        tap(heroes => console.log('fetched products')),
+        catchError(this.handleError('getProducts', []))
+      );
   }
 
 }

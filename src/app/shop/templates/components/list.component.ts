@@ -18,6 +18,17 @@ export class ListComponent implements OnInit {
   
     ngOnInit() {
         this.productList = this.shopService.loadProducts();
+
+
+        
+
+        this.shopService.getProducts("television")
+         .subscribe(res => {
+          this.productList = res;
+        }, err => {
+          console.log(err);
+        });
+        
     }
   
 }
